@@ -1,18 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+
+    style.css
 </head>
 <body>
-    <h1>Expense Tracker</h1>
 
-    <input type="number" id="amount" placeholder="Enter amount">
-    <button onclick="addExpense()">Add Expense</button>
+    <div class="container">
 
-    <ul id="expenses"></ul>
+        <div class="top-bar">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
 
-    <h2>Total: $<span id="total">0</span></h2>
+        <h1 id="title">Expense Tracker</h1>
+
+        <input
+            type="text"
+            id="expenseName"
+            placeholder="Expense Name"
+        >
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            step="0.01"
+        >
+
+        <button onclick="addExpense()" id="addButton">
+            Add Expense
+        </button>
+
+        <ul id="expenses"></ul>
+
+        <div class="total-card">
+            <h2 id="totalLabel">Total</h2>
+            <span id="total">$0.00</span>
+        </div>
+
+    </div>
 
     script.jsscript>
+
 </body>
 </html>
