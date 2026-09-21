@@ -1,3 +1,4 @@
+
 let total = 0;
 
 function formatCurrency(value) {
@@ -8,8 +9,9 @@ function formatCurrency(value) {
 }
 
 function addExpense() {
+
     const expenseName =
-        document.getElementById("expenseName").value;
+        document.getElementById("expenseName").value.trim();
 
     const amount =
         parseFloat(document.getElementById("amount").value);
@@ -27,7 +29,7 @@ function addExpense() {
     const li = document.createElement("li");
 
     li.textContent =
-        expenseName + " - " + formatCurrency(amount);
+        `${expenseName} - ${formatCurrency(amount)}`;
 
     document.getElementById("expenses").appendChild(li);
 
@@ -36,10 +38,12 @@ function addExpense() {
 }
 
 function changeLanguage() {
+
     const lang =
         document.getElementById("language").value;
 
     if (lang === "es") {
+
         document.getElementById("title").textContent =
             "Control de Gastos";
 
@@ -54,7 +58,9 @@ function changeLanguage() {
 
         document.getElementById("totalLabel").textContent =
             "Total";
+
     } else {
+
         document.getElementById("title").textContent =
             "Expense Tracker";
 
@@ -67,4 +73,7 @@ function changeLanguage() {
         document.getElementById("amount").placeholder =
             "Amount";
 
-        document.getElementById("totalLabel").textContent
+        document.getElementById("totalLabel").textContent =
+            "Total";
+    }
+}
