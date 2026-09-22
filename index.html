@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <h1>Expense Tracker</h1>
+    <h1 id="title">Expense Tracker</h1>
 
-    <input type="text" id="expenseName" placeholder="Expense Name">
+    <p id="instructions">
+        Add an expense and click the button.
+    </p>
 
-    <input type="number" id="amount" placeholder="Amount">
+    <label id="languageLabel">Language:</label>
 
-    <button onclick="addExpense()">Add Expense</button>
+    <select id="language" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
 
-    <h2>Expenses</h2>
+    <br><br>
+
+    <input
+        type="text"
+        id="expenseName"
+        placeholder="Expense Name"
+    >
+
+    <input
+        type="number"
+        id="amount"
+        placeholder="Amount"
+    >
+
+    <button id="addButton" onclick="addExpense()">
+        Add Expense
+    </button>
+
+    <h2 id="expenseListTitle">Expenses</h2>
 
     <ul id="expenses"></ul>
 
