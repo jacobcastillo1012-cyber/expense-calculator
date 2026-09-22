@@ -1,88 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(135deg, #7f5af0, #2cb67d);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    background: white;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
     padding: 30px;
-    border-radius: 20px;
-    width: 400px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.top-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-}
-
-select {
-    padding: 8px;
-    border-radius: 8px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-top: 0;
     color: #333;
 }
 
+#instructions {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+label,
+select {
+    margin-bottom: 15px;
+}
+
 input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
+    padding: 10px 15px;
     border: none;
-    border-radius: 10px;
-    background: #7f5af0;
-    color: white;
-    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #6b46e5;
+    background-color: #1d4ed8;
 }
 
-ul {
-    margin-top: 20px;
+#expenseListTitle {
+    margin-top: 25px;
+    color: #333;
+}
+
+#expenses {
     list-style: none;
+    padding: 0;
+    max-width: 700px;
 }
 
-li {
-    background: #f4f4f4;
-    padding: 10px;
+#expenses li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+    padding: 12px;
+
+    background: white;
     border-radius: 8px;
-    margin-bottom: 8px;
+    border-left: 5px solid #2563eb;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.total-card {
-    margin-top: 20px;
-    text-align: center;
-    background: #f8f8f8;
-    padding: 15px;
-    border-radius: 12px;
-}
-
-#total {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2cb67d;
-}
+.delete-btn {
+    background-color: #dc2626;
+    color: white;
+    padding: 6px
