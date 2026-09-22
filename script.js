@@ -1,19 +1,41 @@
 function addExpense() {
 
-    let name = document.getElementById("expenseName").value;
-    let amount = document.getElementById("amount").value;
+    const name = document.getElementById("expenseName").value;
+    const amount = document.getElementById("amount").value;
 
     if (name === "" || amount === "") {
-        alert("Fill all fields");
+        alert("Please fill all fields.");
         return;
     }
 
-    let li = document.createElement("li");
+    const li = document.createElement("li");
 
-    li.textContent = name + " - $" + amount;
+    const expenseText = document.createElement("span");
+    expenseText.textContent = name + " - $" + amount;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "deleteButton";
+
+    deleteButton.onclick = function () {
+        li.remove();
+    };
+
+    li.appendChild(expenseText);
+    li.appendChild(deleteButton);
 
     document.getElementById("expenses").appendChild(li);
 
     document.getElementById("expenseName").value = "";
     document.getElementById("amount").value = "";
 }
+
+function deleteAllExpenses() {
+
+    document.getElementById("expenses").innerHTML = "";
+}
+
+function changeLanguage() {
+
+    const language =
+        document.getElementById(
