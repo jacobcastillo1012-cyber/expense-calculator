@@ -6,9 +6,51 @@
     <title>Expense Tracker</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
 
     <h1 id="title">Expense Tracker</h1>
 
+    <p id="instructions">
+        Add an expense and click the button.
+    </p>
+
+    <div>
+        <label id="languageLabel">Language:</label>
+
+        <select id="language" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <br>
+
+    <input
+        type="text"
+        id="expenseName"
+        placeholder="Expense Name"
+    >
+
+    <input
+        type="number"
+        id="amount"
+        placeholder="Amount"
+    >
+
+    <button id="addButton" onclick="addExpense()">
+        Add Expense
+    </button>
+
+    <h2 id="expenseListTitle">Expenses List</h2>
+
+    <ul id="expenses"></ul>
+
+    <button id="deleteAllButton" onclick="deleteAllExpenses()">
+        Delete All Expenses
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
