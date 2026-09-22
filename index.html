@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
 
-    style.css
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+
+    <label id="languageLabel">Language:</label>
 
     <select id="language" onchange="changeLanguage()">
         <option value="en">English</option>
@@ -42,36 +44,3 @@
 
 </body>
 </html>
-
-
-function addExpense() {
-
-    let name = document.getElementById("expenseName").value;
-    let amount = document.getElementById("amount").value;
-
-    if (name === "" || amount === "") {
-        alert("Fill all fields");
-        return;
-    }
-
-    let li = document.createElement("li");
-
-    li.textContent = name + " - $" + amount + " ";
-
-    let deleteButton = document.createElement("button");
-
-    deleteButton.textContent = "❌";
-
-    deleteButton.onclick = function () {
-        li.remove();
-    };
-
-    li.appendChild(deleteButton);
-
-    document.getElementById("expenses").appendChild(li);
-
-    document.getElementById("expenseName").value = "";
-    document.getElementById("amount").value = "";
-}
-
-li.appendChild(deleteButton);
