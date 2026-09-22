@@ -1,28 +1,23 @@
 function addExpense() {
 
-    const name = document.getElementById("expenseName").value;
-    const amount = document.getElementById("amount").value;
+    let name = document.getElementById("expenseName").value;
+    let amount = document.getElementById("amount").value;
 
     if (name === "" || amount === "") {
-        alert("Please fill all fields.");
+        alert("Fill all fields");
         return;
     }
 
-    const li = document.createElement("li");
+    let li = document.createElement("li");
 
-    const expenseText = document.createElement("span");
-    expenseText.textContent = name + " - $" + amount;
+    li.innerHTML = `
+        ${name} - $${amount}
+        <button class="delete-btn">Delete</button>
+    `;
 
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.className = "deleteButton";
-
-    deleteButton.onclick = function () {
+    li.querySelector(".delete-btn").addEventListener("click", function () {
         li.remove();
-    };
-
-    li.appendChild(expenseText);
-    li.appendChild(deleteButton);
+    });
 
     document.getElementById("expenses").appendChild(li);
 
@@ -30,26 +25,16 @@ function addExpense() {
     document.getElementById("amount").value = "";
 }
 
-function deleteAllExpenses() {
-
-    document.getElementById("expenses").innerHTML = "";
-}
-
 function changeLanguage() {
 
-    const language =
-        document.getElementById("language").value;
+    let language = document.getElementById("language").value;
 
     if (language === "es") {
 
-        document.getElementById("title").textContent =
-            "Control de Gastos";
-
+        document.getElementById("languageLabel").textContent = "Idioma:";
+        document.getElementById("title").textContent = "Control de Gastos";
         document.getElementById("instructions").textContent =
             "Añade un gasto y pulsa el botón.";
-
-        document.getElementById("languageLabel").textContent =
-            "Idioma:";
 
         document.getElementById("expenseName").placeholder =
             "Nombre del gasto";
@@ -61,21 +46,14 @@ function changeLanguage() {
             "Agregar Gasto";
 
         document.getElementById("expenseListTitle").textContent =
-            "Lista de Gastos";
-
-        document.getElementById("deleteAllButton").textContent =
-            "Eliminar Todos los Gastos";
+            "Gastos";
 
     } else {
 
-        document.getElementById("title").textContent =
-            "Expense Tracker";
-
+        document.getElementById("languageLabel").textContent = "Language:";
+        document.getElementById("title").textContent = "Expense Tracker";
         document.getElementById("instructions").textContent =
             "Add an expense and click the button.";
-
-        document.getElementById("languageLabel").textContent =
-            "Language:";
 
         document.getElementById("expenseName").placeholder =
             "Expense Name";
@@ -87,9 +65,6 @@ function changeLanguage() {
             "Add Expense";
 
         document.getElementById("expenseListTitle").textContent =
-            "Expenses List";
-
-        document.getElementById("deleteAllButton").textContent =
-            "Delete All Expenses";
+            "Expenses";
     }
 }
